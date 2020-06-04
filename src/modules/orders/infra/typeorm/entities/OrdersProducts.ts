@@ -11,21 +11,28 @@ import {
 import Order from '@modules/orders/infra/typeorm/entities/Order';
 import Product from '@modules/products/infra/typeorm/entities/Product';
 
+@Entity('orders_products')
 class OrdersProducts {
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  order: Order;
+  // order: Order;
 
-  product: Product;
+  // product: Product;
 
-  product_id: string;
+  // @Column()
+  // product_id: string;
 
-  order_id: string;
+  // @Column()
+  // order_id: string;
 
+  @Column('decimal')
   price: number;
 
+  @Column('int')
   quantity: number;
 
+  @Column()
   created_at: Date;
 
   updated_at: Date;
